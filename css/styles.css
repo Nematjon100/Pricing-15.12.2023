@@ -28,6 +28,7 @@
 
 :root {
   --gradient-blue: linear-gradient(to bottom right, #A2A7F0, #696EDD);
+  --text-color: #6e728e;
 }
 
 /* GLOBAL */
@@ -161,6 +162,70 @@ img {
   text-align: center;
 }
 
+.pricing-switch {
+  margin-bottom: 64px;
+}
+
+.switch-label {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.switch-label:hover {
+  opacity: 1;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switch-label {
+}
+
+.switch-control {
+  position: relative;
+  width: 56px;
+  height: 32px;
+  padding: 4px;
+  margin-left: 24px;
+  margin-right: 24px;
+  border-radius: 16px;
+  background-color: #696EDD;
+  background-image: var(--gradient-blue);
+  /* background-color: #c6c8f4; */
+}
+
+.switch-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: margin 0.3s ease;
+}
+
+.switch-control-annually,
+.switch-control-monthly {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.switch-input-annually:checked ~ .switch-control .switch-control-monthly,
+.switch-input-monthly:checked ~ .switch-control .switch-control-annually{
+  z-index: 5;
+}
+
+.switch-input-monthly:checked ~ .switch-control .switch-circle{
+  margin-left: 24px;
+}
+
+
+/* PRICING */
 .pricing {
   width: 100%;
 }
